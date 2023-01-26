@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <main>
+    <% if (tenRandomMovies.length > 0) { %>
+      <div class="grid">
+          <% for (let movie of tenRandomMovies) { %>
+              <article class="card movie-item">
+                  <header class="card__header">
+                      <h1 class="movie__title">
+                          <%= movie.title %>
+                      </h1>
+                  </header>
+                  <div class="card__image">
+                      <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                  </div>
+              </article>
+              <% } %>
+      </div>
+      <% } else { %>
+        <h1>No Movies Found!</h1>
+        <% } %>
+  </main>
+  
+</body>
+</html>
